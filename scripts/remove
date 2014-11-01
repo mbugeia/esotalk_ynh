@@ -1,0 +1,20 @@
+#!/bin/bash
+
+db_user=esotalk
+db_name=esotalk
+root_pwd=$(sudo cat /etc/yunohost/mysql)
+domain=$(sudo yunohost app setting esotalk domain)
+admin=$(sudo yunohost app setting esotalk admin)
+path=$(sudo yunohost app setting esotalk path)
+
+# Suppression de la base de donnée et son user
+mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
+# Suppression du dossier
+sudo rm -rf /var/www/esotalk
+# Suppression de la configuration nginx
+sudo rm -f /etc/nginx/conf.d/$domain.d/esotalk.conf
+
+
+# Reload Nginx and regenerate SSOwat conf
+sudo service nginx reload
+sudo yunohost app ssowatconf

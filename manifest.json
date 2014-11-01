@@ -1,0 +1,60 @@
+{
+    "name": "esoTalk",
+    "id": "esotalk",
+    "description": {
+        "en": "esoTalk is a free, open-source forum software package.",
+	    "fr": "esoTalk is a free, open-source forum software package."
+    },
+    "license": "GPL v2",
+    "developer": {
+        "name": "",
+        "email": "",
+        "url": "http://esotalk.org/"
+    },
+    "multi_instance": "true",
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "ask": {
+                    "en": "Choose a domain for esoTalk",
+		    "fr": "Choisissez un domaine pour esoTalk"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "ask": {
+                    "en": "Choose a path for esoTalk",
+		    "fr": "Choisissez un chemin pour esoTalk"
+                },
+                "example": "/forum",
+                "default": "/forum"
+            },
+	    {
+		"name": "admin",
+		"ask": {
+		    "en": "Choose the esoTalk administrator (must be an existing YunoHost user)",
+		    "fr": "Choisissez un administrateur esoTalk (doit être un utilisateur YunoHost)"
+		},
+		"example": "john"
+	    },
+	    {
+		"name": "password",
+		"ask": {
+		    "en": "Set the administrator password esoTalk",
+ 			"fr": "Définissez le mot de passe administrateur de esoTalk"
+		},
+		"example": "Choose a password"
+	    },
+	    {
+		"name": "title",
+		"ask": {
+		    "en": "Choose the esoTalk forum title",
+		    "fr": "Choisissez un titre pour le forum esoTalk"
+		},
+		"example": "*Yunbohost Forum"
+	    }
+        ]
+    }
+}
